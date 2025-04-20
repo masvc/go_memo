@@ -1,0 +1,33 @@
+# Go関連
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# バイナリファイル
+bin/
+tmp/
+
+# 依存関係
+vendor/
+
+# IDEとエディタ
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS関連
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# アプリケーション固有
+data/memos.json 

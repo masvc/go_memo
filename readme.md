@@ -5,7 +5,6 @@
 ## 機能
 
 - メモの作成、取得、更新、削除（CRUD 操作）
-- タグによるメモの分類と検索
 - ローカル JSON ファイルによるデータ永続化
 
 ## データ構造
@@ -17,7 +16,6 @@
       "id": "uuid",
       "title": "メモのタイトル",
       "content": "メモの本文",
-      "tags": ["タグ1", "タグ2"],
       "created_at": "2024-03-21T10:00:00Z",
       "updated_at": "2024-03-21T10:00:00Z"
     }
@@ -35,14 +33,9 @@
 - `PUT /memos/:id` - メモの更新
 - `DELETE /memos/:id` - メモの削除
 
-### タグ関連
-
-- `GET /tags` - 全タグの取得
-- `GET /memos?tag=タグ名` - 特定のタグを持つメモの取得
-
 ## 技術スタック
 
-- Go
+- Go 1.22
 - 標準ライブラリのみを使用
 - JSON ファイルによるデータ永続化
 
@@ -50,17 +43,24 @@
 
 1. Go のインストール
 2. リポジトリのクローン
+   ```bash
+   git clone https://github.com/masvc/go_memo.git
+   cd go_memo
+   ```
 3. 依存関係のインストール
+   ```bash
+   go mod tidy
+   ```
 4. サーバーの起動
+   ```bash
+   go run main.go
+   ```
 
-```bash
-go mod init memo-api
-go mod tidy
-go run main.go
-```
+サーバーは `http://localhost:8080` で起動します。
 
 ## 今後の拡張案
 
+- タグ機能の実装
 - メモの検索機能
 - メモの並び替え機能
 - メモのカテゴリ分け
